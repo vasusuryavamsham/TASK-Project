@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="ISO-8859-1">
+<title>Home page</title>
+<link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body>
+<h1 id="header">Online Movie Booking System</h1>
+<nav>
+    <h3>Home</h3>
+    <form action="search">
+    <div id="search"> 
+    <select name="stype">
+    <option selected value="a">List all</option>
+    <option  value="m">Movie</option>
+    <option value="l">Language</option>
+    <option value="c">City</option>
+    </select>
+        <input type="text" name="searchmovie" placeholder="Search.." >
+    <button type="submit" ><i class="fa fa-search"></i></button>
+    </div>
+    </form>
+    </nav>
+    <form id="bookNowForm" action="bookingPage" method="post">
+    <input type="hidden" id="movieName" name="movieName">
+    <input type="hidden" id="language" name="language">
+</form>
+
+<script>
+function bclicked(movieName, language) {
+    // Set the values of hidden fields
+    document.getElementById('movieName').value = movieName;
+    document.getElementById('language').value = language;
+	alert("hello ");
+    // Submit the form
+    document.getElementById('bookNowForm').submit();
+}
+</script>
+    
+<p id="result"></p>
+
+
+</body>
+</html>

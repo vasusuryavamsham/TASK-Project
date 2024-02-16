@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+<welcome-file-list>
+<welcome-file>login.html</welcome-file>
+</welcome-file-list>
+
+<servlet>
+    <servlet-name>login</servlet-name>
+    <servlet-class>com.task.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>login</servlet-name>
+  <url-pattern>/validate</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+  <servlet-name>register</servlet-name>
+  <servlet-class>com.task.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>register</servlet-name>
+  <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Add movie</servlet-name>
+  <servlet-class>com.task.AddMovie</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Add movie</servlet-name>
+  <url-pattern>/addmovie</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  <servlet-name>List Movies</servlet-name>
+  <servlet-class>com.task.ListMovies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>List Movies</servlet-name>
+  <url-pattern>/listmovies</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>search Movies</servlet-name>
+  <servlet-class>com.task.SearchMovies</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>search Movies</servlet-name>
+  <url-pattern>/search</url-pattern>
+  </servlet-mapping>
+  
+
+</web-app>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Page</title>
+<style>
+body{
+	background-image:url("photos/loginbg.jpg");
+ 	background-size:cover;
+}
+form{
+	background-color:rgba(255,255,255,0.1);
+	width:40%;
+	margin:3% auto;
+ 	height:80vh;
+ 	color:white;
+ 	text-align:center; 	
+ 	border:2px solid black;
+ 	border-radius:30px;
+ 	
+}
+h1,p,input{
+margin:3% 0;
+}
+input{
+margin-left:1%;
+}
+label{
+margin-left:2.5%;
+}
+
+input{
+background-color:rgba(255,255,255,0.1);}
+h1{
+padding:5% 0 3% 0;
+}
+#submit{
+background-color:black;
+color:white;
+width:15%;
+height:5%;
+margin-top: -3%;
+border:2px solid white;
+border-radius: 30px;
+}
+#submit:hover{
+background-color:white;
+color:black;
+}
+
+
+</style>
+
+
+</head>
+<body>
+<form method="get" action="validate">
+<h1>Login Page</h1>
+<label for="admin">Admin: <input id="admin" type="radio" name="type"  value="admins"></label>
+<label for="user"> User: <input id="user" type="radio" name="type"  value="users" checked ></label><br>
+Username : <input type="text" name="username" required><br><br>
+Password : <input type="password" name="password" required><br><br><br>
+<input id="submit" type="submit" value="submit">
+<p>Not Registered <a id="register" href="registration.html"> Register</a></p>
+</form>
+</body>
+</html>
