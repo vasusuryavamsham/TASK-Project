@@ -50,18 +50,19 @@ public class ListMovies extends HttpServlet {
 			catch(Exception e) {
 				pw.println(e);
 				pw.println("operation failed, try again.");
-				RequestDispatcher rd=request.getRequestDispatcher("adminhome.html");
+				RequestDispatcher rd=request.getRequestDispatcher("login.html");
 				rd.include(request, response);
 	         }
 	}
 	public void ptable(PrintWriter pw, String result,boolean sb) {
 		String id="result";
-		String fc="bclicked('+ movie[0]+' , '+movie[2]+')";
+//		String fc="bclicked('+ movie[0]+' , '+movie[2]+')";
+//		String fc="bclicked( movie[0], movie[2])";
 		pw.println("<script>");
 		pw.println("var result = '" + result + "';");
 		pw.println("var movies = result.split('<br>');");
-		pw.println("var tableHtml = '<center><table style=\"border-collapse: collapse;width:80%; text-align:center;\">';");
-		pw.println("tableHtml += '<tr><th style=\"border: 1px solid black; padding: 8px;width:20%;\">Movie</th><th style=\"border: 1px solid black; padding: 8px;\">Price</th><th style=\\\"border: 1px solid black; padding: 8px;\\\">Language</th><th style=\\\"border: 1px solid black; padding: 8px;\\\">City</th>';"); // Header row
+		pw.println("var tableHtml = '<center><table id=\"tb\" style=\"border-collapse: collapse;width:100%; text-align:center;\">';");
+		pw.println("tableHtml += '<tr id=\"hd\"><th style=\"border: 1px solid black; padding: 8px;width:20%;\"><b>Movie</b></th><th style=\"border: 1px solid black; padding: 8px;\"><b>Price</><b/th><th style=\\\"border: 1px solid black; padding: 8px;\\\"><b>Language</b></th><th style=\\\"border: 1px solid black; padding: 8px;\\\"><b>City</b></th>';"); // Header row
 		if(sb) {
 			pw.println("tableHtml += '<th style=\\\"border: 1px solid black; padding: 8px;\\\">Book now</th>';");
 		}
@@ -75,7 +76,11 @@ public class ListMovies extends HttpServlet {
 		pw.println("        tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\">' + movie[2] + '</td>';"); // language cell
 		pw.println("        tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\">' + movie[3] + '</td>';"); // location cell
 		if(sb) {
-		    pw.println("        tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\"><button onclick=\""+fc +"\">Click Here</button></td>';"); // Book Now button cell
+//			 pw.println("        var fc = \"bclicked( movie[0], movie[2])\"");
+//		    pw.println("        tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\"><button onclick=\""+fc +"\">Click Here</button></td>';"); // Book Now button cell
+//			 pw.println("        tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\"><button onclick=\"bclicked(' + movie[0] + ',' + movie[2] + ')\">Click Here</button></td>';"); // Book Now button cell
+//			pw.println("        tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\"><button onclick=\"bclicked(' + movie[0] + ',' + movie[2] + ')\">Click Here</button></td>';"); // Book Now button cell
+			pw.println("tableHtml += '<td style=\"border: 1px solid black; padding: 8px;\">' + '<button onclick=\"bclicked(\\'' + movie[0] + '\\', \\'' + movie[1] + '\\', \\'' + movie[2] + '\\', \\'' + movie[3] + '\\')\">Click Here</button></td>';"); // Book Now button cell
 		}
 
 		pw.println("        tableHtml += '</tr>';");

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+body{
+	background-image:url("photos/loginbg.jpg");
+ 	background-size:cover;
+}
+input{
+margin-left:1%;
+width:75%;
+background-color:rgba(255,255,255,0.5);
+margin-bottom:25%;
+border:0 solid grey;
+border-radius:30px;
+height:7%;
+padding-left:3%;
+box-shadow: 4px 4px 8px 1px rgba(255, 0, 0, 0.4);
+}
+label{
+display:block;
+width:80%;
+text-align:left;
+margin-left:13%;
+margin-bottom:-5%;
+}
+
+form{
+	background-color:rgba(255,255,255,0.1);
+	width:40%;
+	margin:3% auto;
+	
+ 	height:80vh;
+ 	color:white;
+ 	text-align:center; 	
+ 	border:2px solid black;
+ 	border-radius:30px;
+ 	
+}
+h1,p,input{
+margin:3% 0;
+}
+
+
+
+h1{
+padding:5% 0 3% 0;
+}
+#submit{
+background-color:red;
+color:white;
+width:78%;
+height:7%;
+margin-top: -3%;
+border:2px solid white;
+border-radius: 30px;
+}
+#submit:hover{
+background-color:white;
+color:black;
+}
+.types{
+	display:flex;
+	justify-content:space-between;
+	margin-right:5%;
+	padding:3%;
+	align-items:center;
+}
+.types *{
+	margin:0;
+	padding:0;
+	margin-right:10%;
+	box-shadow:none;
+	
+}
+
+#utype{
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	margin-left:10%;
+}
+#register{
+	background-color:white;
+	border:2px solid black;
+	border-radius:20px;
+	text-decoration:none;
+	font-weight:bolder;
+	padding:0.8%;
+	color:red;
+}
+*{
+	font-size:large;
+	font-weight:bolder;
+}

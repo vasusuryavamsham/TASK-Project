@@ -5,61 +5,29 @@
 <title>Registration Form</title>
 
 <style>
-body{
-	background-image:url("photos/loginbg.jpg");
- 	background-size:cover;
-}
-form{
-	background-color:rgba(255,255,255,0.1);
-	width:40%;
-	margin:3% auto;
- 	height:80vh;
- 	color:white;
- 	text-align:center; 	
- 	border:2px solid black;
- 	border-radius:30px;
- 	
-}
-h1,p,input{
-margin:3% 0;
-}
-input{
-margin-left:1%;
-}
-label{
-margin-left:2.5%;
-}
-
-input{
-background-color:rgba(255,255,255,0.1);}
-h1{
-padding:5% 0 3% 0;
-}
-#submit{
-background-color:black;
-color:white;
-width:15%;
-height:5%;
-margin-top: -3%;
-border:2px solid white;
-border-radius: 30px;
-}
-#submit:hover{
-background-color:white;
-color:black;
-}
-
-
 </style>
+<link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
 	<form method="get" action="register">
 	<h1>Registration Page</h1>
-	<label for="admin">Admin: <input id="admin" type="radio" name="type"  value="admins"></label>
-   <label for="user"> User: <input id="user" type="radio" name="type"  value="users" checked ></label><br>
-    Password : <input type="password" name="password1" required><br><br>
-	Retype Password : <input type="password" name="password2" required><br><br><br>
+	<div id="utype">
+
+<div class="types">
+<label for="admin">Admin: </label> 
+<input id="admin" type="radio" name="type"  value="admins">
+</div>
+<div class="types">
+<label for="user"> User: </label> 
+<input id="user" type="radio" name="type"  value="users" checked >
+</div>
+
+</div><br>
+<label for="usname">Username:</label><br><input id="usname" type="text" name="username" required><br><br>
+<label for="paswd">Password:</label><br><input id="paswd" type="password" name="password1" required><br><br>
+<label for="paswd">Retype Password:</label><br><input id="paswd" type="password" name="password2" required><br><br><br>
+
 	<input id="submit" type="submit" value="Register">
 	</form>
 </body>

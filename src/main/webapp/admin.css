@@ -1,0 +1,103 @@
+body{
+	margin:0;
+	padding:0;
+	background-image:url("./photos/adminbg.jpg");
+	background-size:cover;
+}
+*{
+	
+	color:white;
+}
+.header{
+	text-align:center;
+	background-color:rgba(255,255,255,0.2);
+	padding:1% 0;
+	margin-bottom:-0.01%;
+}
+.flex{
+	display:flex;
+	justify-content:space-between;
+}
+.sidebar{
+	text-align:center;
+	width:20%;
+	background-color:rgba(255,255,255,0.1);
+	padding:2% 0;
+}
+.sec{
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+	align-items:flex-start;
+	padding:1% auto;
+	padding-left:32%;
+	margin-top:3%;
+}
+.sec *{
+	margin-top:13%;
+	text-decoration:none;
+	border:0 solid white;
+	border-bottom-width:2px;
+}
+.content{
+	width:100%;
+	padding:0 2%;
+	height:80vh;
+	overflow:auto;
+}
+.logo{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+}
+#submit{
+	background-color:#400403;
+	margin-top:1%;
+	display:inline-block;
+	width:25%;
+	height:7%;
+}
+#submit:hover{
+	background-color:#B94423;
+}
+.add{
+	text-align:center;
+}
+.add h2{
+	display:inline-block;
+	width:20%;
+	font-size:50px;
+	border:0 ridge white;
+	border-bottom-width:4px;
+	border-radius:3px;
+	margin-top:1%;
+}
+.add *{
+	font-size:x-large;
+}
+.content input{
+	border-radius:30px;
+	background-color:rgba(0,0,0,0.2);
+	
+}
+#hd *{
+	color:red;
+	font-weight:bolder;
+	font-size:x-large;
+}
+#list{
+	text-align:center;
+}
+#list h2{
+	text-align:center;
+	display:inline-block;
+	width:22%;
+	font-size:50px;
+	border:0 ridge white;
+	border-bottom-width:4px;
+	border-radius:3px;
+	margin-top:1%;
+}
+
+
+

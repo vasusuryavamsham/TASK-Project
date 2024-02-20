@@ -49,5 +49,14 @@
   <url-pattern>/search</url-pattern>
   </servlet-mapping>
   
-
+  <servlet>
+  <servlet-name>booking</servlet-name>
+  <servlet-class>com.task.BookingPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>booking</servlet-name>
+  <url-pattern>/bookingPage</url-pattern>
+  </servlet-mapping>
+  
+ 
 </web-app>

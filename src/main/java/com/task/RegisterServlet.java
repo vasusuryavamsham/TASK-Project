@@ -48,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 		catch(Exception e) {
 			pw.println(e);
 			pw.println("failed to register, select other username");
-			RequestDispatcher rd=request.getRequestDispatcher("register.html");
+			RequestDispatcher rd=request.getRequestDispatcher("registration.html");
 			rd.include(request, response);
 		}
 		

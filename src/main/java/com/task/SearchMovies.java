@@ -13,6 +13,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class SearchMovies extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -46,7 +47,11 @@ public class SearchMovies extends HttpServlet {
 			}	
 			rs.close();
 			pst.close();
-			RequestDispatcher rd=request.getRequestDispatcher("userhome.html");
+			
+			HttpSession session = request.getSession();
+			String initial = session.getAttribute("initial").toString();
+			request.setAttribute("initial", initial);
+			RequestDispatcher rd=request.getRequestDispatcher("userhome.jsp");
 			rd.include(request, response); 
 			ListMovies ob = new ListMovies();
 			ob.ptable(pw, result,true);
@@ -57,10 +62,11 @@ public class SearchMovies extends HttpServlet {
 		catch(Exception e) {
 			pw.println(e);
 			pw.println("Login is failed, try again");
-			RequestDispatcher rd=request.getRequestDispatcher("userhome.html");
+			RequestDispatcher rd=request.getRequestDispatcher("userhome.jsp");
 			rd.include(request, response);
 		}
 		
 	
 }
+	
 }

@@ -12,6 +12,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.task.ListMovies;
 
 public class AddMovie extends HttpServlet {
@@ -43,9 +45,11 @@ try {
 			
 			
 			pw.println("movie: "+mname+" added successfully.");
+			HttpSession session = request.getSession();
+			String name = session.getAttribute("name").toString();
+			request.setAttribute("name", name);
 			
-			
-			RequestDispatcher rd=request.getRequestDispatcher("adminhome.html");
+			RequestDispatcher rd=request.getRequestDispatcher("adminhome.jsp");
 			rd.include(request, response);
 //			pw.println("<script>document.getElementById('result').innerHTML = '" + result + "';</script>");
 			ListMovies lm = new ListMovies();
@@ -58,7 +62,7 @@ try {
 		catch(Exception e) {
 			pw.println(e);
 			pw.println("Failed to add, Try again");
-			RequestDispatcher rd=request.getRequestDispatcher("adminhome.html");
+			RequestDispatcher rd=request.getRequestDispatcher("adminhome.jsp");
 			rd.include(request, response);
 		}
 		

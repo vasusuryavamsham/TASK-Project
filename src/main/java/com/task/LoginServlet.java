@@ -11,10 +11,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import com.task.ListMovies;
 public class LoginServlet extends HttpServlet {
+	
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException
 	{
+		
 		response.setContentType("text/html");
 		PrintWriter pw=response.getWriter();
 		String uname=request.getParameter("username");
@@ -37,12 +41,20 @@ public class LoginServlet extends HttpServlet {
 			}
 			pst.close();
 			if(cuname.equals(uname)&& cpwd.equals(pwd)) {
-				String fc="bclicked('+ movie[0]+' , '+movie[2]+')";
-				pw.println("Login Success");
+				
+				request.setAttribute("name", uname);
+				request.setAttribute("initial", uname.charAt(0));
+				HttpSession session = request.getSession();
+				session.setAttribute("initial", uname.charAt(0));
+				session.setAttribute("name", uname);
+				pw.println("<p style='color:red'>Login Success : "+uname+"<p>");
 				
 				   
 				if(type.equals("admins")) {
-					RequestDispatcher rd=request.getRequestDispatcher("adminhome.html");
+					
+					String name = session.getAttribute("name").toString();
+					request.setAttribute("name", name);
+					RequestDispatcher rd=request.getRequestDispatcher("adminhome.jsp");
 					rd.include(request, response); 					
 //					RequestDispatcher rd = request.getRequestDispatcher("adminhome.html");
 //					pw.println("<script>document.getElementById('result').innerHTML = '" + result + "';</script>");
@@ -53,7 +65,7 @@ public class LoginServlet extends HttpServlet {
 					
 				}
 				else {
-					RequestDispatcher rd=request.getRequestDispatcher("userhome.html");
+					RequestDispatcher rd=request.getRequestDispatcher("userhome.jsp");
 					rd.include(request, response); 
 					ListMovies lm = new ListMovies();
 					lm.doGet(request,response,true);
@@ -65,7 +77,7 @@ public class LoginServlet extends HttpServlet {
 				RequestDispatcher rd=request.getRequestDispatcher("login.html");
 				rd.include(request, response);
 			}
-			
+
 		}
 		catch(Exception e) {
 			pw.println(e);
@@ -76,5 +88,6 @@ public class LoginServlet extends HttpServlet {
 		
 		
 	}
+
 
 }
